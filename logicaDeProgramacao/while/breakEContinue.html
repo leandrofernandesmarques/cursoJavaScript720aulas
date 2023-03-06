@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops - Javascript</title>
+</head>
+<body>
+    <script>
+        let numero = prompt("Digite um numero para tabuada: ")
+
+        let i = 0
+        while (i <=10){
+            document.write(`${numero} x ${i} = ${i * numero} <br>`)
+            i ++
+        }
+        document.write(`Saiu do loop WHILE<br>`)
+
+       
+        do{
+            if (i > 10){
+                alert(`O índice está valendo ${i} não vou executar (vou dar um BREAK no DO WHILE)`)
+                break //Se o índice for maior que 10 vai dar um break
+            }
+            document.write(`${numero} x ${i} = ${i * numero} <br>`)//Executa pelo menos 1 vez
+            i ++
+        }while(i <= 10)
+        document.write(`Saiu do loop DO WHILE<br>`)
+        
+
+        for(let i = 0 ;  i <= 10 ;  i++){
+            if (i === 5){
+                alert("Indice valendo 5, vou CONTINUAR para a próxima iteração (pulando esse índice).")
+                continue //Continue (pulando o 5) a iteração.
+            }
+            document.write(`${numero} x ${i} = ${i * numero} <br>`)            
+        }
+        document.write(`Saiu do loop FOR<br>`)
+        
+    </script>
+    
+
+</body>
+</html>
