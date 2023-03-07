@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops - Javascript</title>
+</head>
+<body>
+    <h1>Tipos de Funções JS</h1>
+    <script>
+        // 1 - Função Declarada:
+     function olaMundo( ){       
+        document.write("Olá mundo com function<br>")
+      }
+    olaMundo()
+
+    // 2 - Function expression
+    const olaVoce = function( ){
+        console.log("Ola Você!! Com Function Expression<br>")
+    }
+    olaVoce()
+
+    // 3 - Arrow function
+    const olaGalera = ( ) => {
+        console.log("Ola Galera!! Com Arrow Function<br>")
+    }
+    olaGalera()
+
+    // 4 - Funções que retornam valores:
+    function obterDiaSemana() {
+        return new Date( ).getDay( )//Para retornar o dia da semana o JS tem essa função.        
+    }
+    let dia = obterDiaSemana() 
+    console.log(dia)
+    //Ou poderiamos fazer assim também:
+    console.log(obterDiaSemana( ))
+
+    // 5 -funções que recebem valores:
+    function somar(n1, n2){
+        return n1 + n2
+    }
+    let soma = somar(3,5)//Programinha, some para mim 3 + 5
+    console.log(soma)
+    //Ou:
+    console.log(somar(2, 3))
+
+    function soma3Numeros(n1, n2, n3){//Mas e seu eu colocar apenas 2 valores? vou tomar um NaN. Vamos usar o curto circuito pra dar um jeito nisso:
+        let _n1 = n1 || 0  //Esse jeito é para browsers mais antigos
+        let _n2 = n2 || 0
+        let _n3 = n3 || 0
+        return  _n1 + _n2 + _n3        
+    }
+    let soma3 = soma3Numeros(2, 3,6)
+    let soma2 = soma3Numeros(2,3)
+    console.log(soma3)
+    console.log(soma2)
+
+    //No Ecma Script 6 temos uma maneira melhor de fazer isso:
+    function soma4Numeros(n1=0, n2=0, n3=0, n4=0){//Podemos colocar o = e o valor padrão para parametros vazios
+       /*  let _n1 = n1 || 0
+        let _n2 = n2 || 0
+        let _n3 = n3 || 0 */
+        return  n1 + n2 + n3 + n4        
+    }
+    let soma4 = soma4Numeros(2, 3,6,4)
+    let soma1 = soma4Numeros(2)
+    console.log(soma4)
+    console.log(soma1)
+ </script>
+    
+
+</body>
+</html>
